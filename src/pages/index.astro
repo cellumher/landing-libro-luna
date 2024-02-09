@@ -1,4 +1,5 @@
 ---
+import { WaitingListForm } from '@/components/WaitingListForm';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -19,25 +20,8 @@ import Layout from '../layouts/Layout.astro';
 				<h3 class="text-xl">Editorial Círculo Rojo</h3>
 			</header>
 
-			<div class="flex items-center h-full">
-				<form action="">
-					<legend class="mb-2">Introduce tu correo electrónico y te notificaremos cuando esté disponible</legend>
-					<div class="flex w-full justify-center items-end gap-1">
-						<label for="email" class="w-full">Email
-						<input type="email" id="email" class="bg-slate-50 text-gray-900 
-						text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
-						block w-full p-2.5" placeholder="Email" required></label>
-		
-						<button type="submit" class="text-white bg-gradient-to-br from-cyan-600 
-						to-[#283777] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none 
-						focus:ring-blue-300 dark:focus:ring-[#ec9555] font-medium rounded-lg 
-						text-sm px-5 py-2.5 text-center transition-all duration-300">
-							Avísame
-						</button>
-					</div>
-	
-				</form>
-			</div>
+			<WaitingListForm client:load />
+			
 		</section>
 	</article>
 
