@@ -5,17 +5,15 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="El Pequeño y la Luna - Reservar libro">
 	
-	<article id="booking">
+	<section id="booking" class="mb-12 max-w-md md:max-w-full mx-auto">
 
-		<section aria-label="booking-cover-section" class="w-full flex justify-center">
-			<picture >
-				<img src="/portada-el-pequeno-y-la-luna.jpeg" alt="El Pequeño y la Luna - Portada del Libro" 
-				class="max-w-md w-full drop-shadow-[0_0_13px_rgba(24,24,27,0.5)] ">
-			</picture>
-		</section>
-		<section class="flex flex-col max-w-md w-full md:max-w-lg h-full" aria-label="booking-form-section">
+		<picture class="w-full flex justify-center">
+			<img src="/portada-el-pequeno-y-la-luna.jpeg" alt="El Pequeño y la Luna - Portada del Libro" 
+			class="max-w-md w-full drop-shadow-[0_0_13px_rgba(40,55,119,0.5)] ">
+		</picture>
+		<section class="flex flex-col w-full h-full">
 			<header class="mb-5">
-				<h1 class="text-4xl">El <span class="text-accent-2">Pequeño</span> y la <span class="text-accent-1">Luna</span></h1>
+				<h1 class="text-4xl font-bold">El <span class="text-accent-2">Pequeño</span> y la <span class="text-accent-1">Luna</span></h1>
 				<h2 class="text-2xl">Escrito e ilustrado por Rocío Muñoz</h2>
 				<h3 class="text-xl">Editorial Círculo Rojo</h3>
 			</header>
@@ -23,7 +21,74 @@ import Layout from '../layouts/Layout.astro';
 			<WaitingListForm client:load />
 			
 		</section>
-	</article>
+	</section>
+	<section class="mb-12 flex flex-col items-center md:items-start max-w-md md:max-w-full mx-auto">
+		<header>
+			<h2 class="text-3xl text-accent-2 mb-4 ">Sinopsis</h2>
+		</header>
+		<section  
+		class="w-full flex flex-col md:flex-row items-center">
+			<div class="md:mr-12">
+				<p class="mb-4">
+					Inspirado por la fascinación por la luna de su hijo pequeño, El Pequeño y la Luna 
+					es un cuento infantil con ilustraciones que trata de explicar a los más pequeños 
+					las fases de la luna a través de una novedosa y bonita historia.
+				</p>
+				<p class="mb-4">
+					Además, el tipo de letra utilizado en el relato es el escolar, por lo que 
+					es una lectura muy recomendable y entretenida para los niños que están 
+					aprendiendo a escribir; es el tipo de letra que mejor entienden cuando 
+					comienzan a leer.
+				</p>
+			</div>
+			<picture class="max-w-xs md:max-w-44 w-full">
+				<img src="/folleto-el-pequeno-y-la-luna.jpg" alt="El Pequeño y la Luna - Folleto" 
+				class="w-full drop-shadow-[0_0_13px_rgba(40,55,119,0.5)]">
+			</picture>
+		</section>
+	</section>
+	<section class="mb-12 flex flex-col items-center md:items-start max-w-md md:max-w-full mx-auto">
+		<header>
+			<h2 class="text-3xl text-accent-2 mb-4 ">Autora</h2>
+		</header>
+		
+		<section class="flex flex-col-reverse md:flex-row-reverse">
+			<div class="md:ml-12">
+				<p class="mb-4">
+					Rocío Muñoz Cerdán nació en Almería en enero de 1991.
+				</p>
+				<p class="mb-4">
+					Atraída por las artes en todas sus expresiones y aficionada al cine, se ha 
+					interesado siempre por la escritura de relatos, pero la iniciativa de 
+					hacer cuentos infantiles ha llegado de la experiencia de ser madre. La 
+					idea surgió por la curiosidad de su hijo en la luna, que le llevó a 
+					escribirle una bonita historia.
+				</p>
+				<p class="mb-4">
+					A los doce años empezó a practicar la pintura al óleo, incorporando 
+					posteriormente otras técnicas, como las utilizadas para las ilustraciones 
+					del libro.
+				</p>
+				<p class="mb-4">
+					En su adolescencia ganó un par de premios en concursos locales en la técnica de dibujo.
+				</p>
+				<p class="mb-4">
+					Jugadora de balonmano durante muchos años de su vida, el deporte le ha 
+					enseñado disciplina y valores del trabajo en equipo que siempre le 
+					influyen de alguna forma en lo que hace.
+				</p>
+			</div>
+			<figure class="max-w-lg">
+				<picture>
+					<img src="/autora-el-pequeno-y-la-luna-rocio-munoz.jpeg" alt="Rocío Muñoz, 
+					autora de El Pequeño y la Luna" class="w-full
+					drop-shadow-[0_0_13px_rgba(40,55,119,0.5)] ">
+				</picture>
+				<figcaption class="italic font-semibold text-sm mt-2 mb-8">Rocío Muñoz Cerdán, 
+					autora de El Pequeño y la Luna</figcaption>
+			</figure>
+		</section>
+	</section>
 
 </Layout>
 
@@ -34,7 +99,7 @@ import Layout from '../layouts/Layout.astro';
 		gap: 40px;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 767px) {
 		#booking {
 		display: flex;
 		flex-direction: column;

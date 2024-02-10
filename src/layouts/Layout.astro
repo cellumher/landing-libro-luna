@@ -14,16 +14,32 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Haz ya la reserva de tu ejemplar de El Pequeño y la Luna. Escrito e ilustrado por Rocío Muñoz" />
+		<meta name="description" content="El libro El Pequeño y la Luna estará pronto disponible. Escrito e ilustrado por Rocío Muñoz" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<meta property="og:title" content="El Pequeño y la Luna - Reservar libro" />
+		<meta property="og:description" content="Escrito e ilustrado por Rocío Muñoz, 
+		El Pequeño y la Luna es un cuento infantil que trata de explicar a los más 
+		pequeños las fases de la luna. Resérvalo ya." />
+		<meta property="og:image" content="/portada-el-pequeno-y-la-luna.jpeg" />
+		<meta property="og:image:alt" content="Portada de El Pequeño y la Luna, 
+		por Rocío Muñoz" />
+
+		<meta name="twitter:title" content="El Pequeño y la Luna - Reserva el libro" />
+		<meta name="twitter:description" content="Escrito e ilustrado por Rocío Muñoz, 
+		El Pequeño y la Luna es un cuento infantil que trata de explicar a los más 
+		pequeños las fases de la luna. Resérvalo ya." />
+		<meta name="twitter:image:src" content="/portada-el-pequeno-y-la-luna.jpeg" />
+		<meta name="twitter:image:alt" content="Portada de El Pequeño y la Luna, 
+		por Rocío Muñoz" />
+		
 	</head>
 	<body class="relative min-h-screen">
 		<main class="relative max-w-screen-lg mx-auto px-12 pt-48 pb-12">
 			<slot />
-
 		</main>
 
 		<div class="absolute inset-0 overflow-hidden -z-10">
@@ -59,32 +75,32 @@ const { title } = Astro.props;
 
 	.text-accent-1 {
 		font-family: var(--font-family-accent-1);
+		font-weight: 400;
 		color: #ec9555
-		
 	}
 	.text-accent-2 {
 		font-family: var(--font-family-accent-1);
-		color: #283777;
+		font-weight: 400;
+		color: rgb(40, 55, 119);
 	}
 
-	.semicircle-top {
+	.semicircle-top, .semicircle-right {
 		position: absolute;
 		height: 100vw;
 		width: 100vw;
-		max-width: 1024px;
 		min-width: 300px;
 		min-height: 300px;
+	}
+
+	.semicircle-top {
+		max-width: 1024px;
+		max-height: 1024px;
 		bottom: 0;
 	}
 
 	.semicircle-right {
-		position: absolute;
-		height: 100vw;
-		width: 100vw;
 		max-width: 400px;
 		max-height: 400px;
-		min-width: 300px;
-		min-height: 300px;
 		left: 0;
 	}
 </style>
